@@ -4,7 +4,7 @@ Demonstration of the use of Electron to make a desktop app from Web tools
 
 I will use branches to show the changes
 
-## HTML
+## Web
 
 This will show a "hipster clock" I created using HTML5 and Canvas.
 
