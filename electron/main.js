@@ -11,7 +11,8 @@ function createWindow() {
     width: 200,
     height: 200,
     icon: path.join(__dirname,'icon.png')
-  })
+  });
+  mainWindow.loadFile('clock.html');
 }
 
 app.on('ready', createWindow);
