@@ -4,13 +4,13 @@
   "description": "A weird desktop clock in Node & Electron",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "npm install && electron ."
   },
   "keywords": [
     "Electron",
     "Clock"
   ],
-  "author": "Dave Jacoby",
+  "author": "Dave Jacoby <jacoby.david@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "electron": "^2.0.10"
