@@ -22,16 +22,16 @@
   </style>
 </head>
 
-<body> <canvas id="demo" width="500" height="500"></canvas>
+<body> <canvas id="demo" width="1000" height="1000"></canvas>
   <script>
     var demo = {};
     demo.values = {};
-    demo.values.interval = 10 ;
+    demo.values.interval = 1000 / 48;
     demo.values.count = 0;
-    demo.values.window_height = 500;
-    demo.values.window_width = 500;
-    demo.values.clock_height = 500;
-    demo.values.clock_width = 500;
+    demo.values.window_height = 1000;
+    demo.values.window_width = 1000;
+    demo.values.clock_height = 1000;
+    demo.values.clock_width = 1000;
     demo.values.tau = Math.PI * 2;
 
     demo.values.mx = demo.values.clock_height / 2;
@@ -165,17 +165,7 @@
       var ctx = demo.values.ctx;
       var winx = demo.values.window_height;
       var winy = demo.values.window_width;
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(0, winy);
-      ctx.lineTo(winx, winy);
-      ctx.lineTo(winx, 0);
-      ctx.lineTo(0, 0);
-      ctx.strokeStyle = "rgb(255,255,255)";
-      ctx.stroke();
-      ctx.fillStyle = "rgb(255,255,255)";
-      ctx.fill();
-
+      ctx.clearRect(0, 0, winx, winy);
     }
 
     /* the part that keeps it going */
@@ -186,6 +176,7 @@
     /* functions independently, making the canvas square and big */
     make_square();
     window.onresize = make_square;
+
     function make_square() {
       let height = window.innerHeight;
       let width = window.innerWidth;
