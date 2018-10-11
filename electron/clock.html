@@ -22,7 +22,8 @@
   </style>
 </head>
 
-<body> <canvas id="demo" width="1000" height="1000"></canvas>
+<body> 
+  <canvas id="demo" width="1000" height="1000"></canvas>
   <script>
     var demo = {};
     demo.values = {};
@@ -60,6 +61,7 @@
 
     demo.functions = {}
     demo.functions.rings = function () {
+      requestAnimationFrame(demo.functions.rings);
       var today = new Date;
       var tDay = today.getDay();
       var tHour = today.getHours();
@@ -169,9 +171,10 @@
     }
 
     /* the part that keeps it going */
-    setInterval(function () {
-      demo.functions.rings();
-    }, demo.values.interval);
+    requestAnimationFrame(demo.functions.rings);
+    // setInterval(function () {
+    //   demo.functions.rings();
+    // }, demo.values.interval);
 
     /* functions independently, making the canvas square and big */
     make_square();
